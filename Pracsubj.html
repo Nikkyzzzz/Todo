@@ -12,12 +12,13 @@
         padding: 0;
         background-color: #f0f0f0;
         display: flex;
+        flex-wrap: wrap; /* Allow containers to wrap on smaller screens */
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh; /* Use min-height instead of height for better responsiveness */
     }
     .container {
-        width: 200px;
+        width: calc(33.33% - 40px); /* Adjust width for three columns with margin */
         margin: 20px;
         padding: 20px;
         background-color: #fff;
@@ -36,6 +37,20 @@
     }
     .container a:hover {
         background-color: #ddd;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+        .container {
+            width: calc(50% - 40px); /* Adjust width for two columns with margin */
+        }
+    }
+
+    /* Media query for even smaller screens */
+    @media screen and (max-width: 480px) {
+        .container {
+            width: calc(100% - 40px); /* Adjust width for full width with margin */
+        }
     }
 </style>
 </head>
