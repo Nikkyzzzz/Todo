@@ -39,6 +39,9 @@
         font-size: 1.2em;
         margin-bottom: 10px;
     }
+    .low-mark {
+        background-color: #FFB6C1; /* Light pink */
+    }
 </style>
 </head>
 <body>
@@ -62,7 +65,7 @@
         </tr>
         <tr>
             <td>Computer Networks</td>
-            <td>-</td>
+            <td>37</td>
         </tr>
         <tr>
             <td>Web Technology</td>
@@ -162,11 +165,11 @@
         </tr>
         <tr>
             <td>Computer Networks</td>
-            <td>-</td>
+            <td class="low-mark">14</td>
         </tr>
         <tr>
             <td>Web Technology</td>
-            <td>0</td>
+            <td class="low-mark">0</td>
         </tr>
         <tr>
             <td>Cyber Forensic Analytics</td>
@@ -242,6 +245,18 @@
         </tr>
     </table>
 </div>
+<script>
+    // JavaScript to add class to cells with marks less than 18
+    document.addEventListener("DOMContentLoaded", function() {
+        var cells = document.querySelectorAll("td");
+        cells.forEach(function(cell) {
+            var mark = parseFloat(cell.textContent);
+            if (!isNaN(mark) && mark < 18) {
+                cell.classList.add("low-mark");
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
